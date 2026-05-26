@@ -35,36 +35,6 @@ Aplicativo móvel completo para levantamento e gerenciamento de dados de proprie
 - ✅ Detalhes de propriedade
 - ✅ Perfil do usuário
 
-## 🏗️ Arquitetura
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Flutter App (Frontend)                │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │  Screens (Login, Home, Forms, Details)           │   │
-│  │  Providers (Auth, Propriedade)                   │   │
-│  │  Services (API Integration)                      │   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
-                           ↕ HTTP/REST
-┌─────────────────────────────────────────────────────────┐
-│                Spring Boot API (Backend)                 │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │  Controllers (Auth, Users, Properties)           │   │
-│  │  Services (Business Logic)                       │   │
-│  │  Repositories (Data Access)                      │   │
-│  │  Security (JWT, Spring Security)                 │   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
-                           ↕ JDBC
-┌─────────────────────────────────────────────────────────┐
-│                  PostgreSQL Database                     │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │  usuario | propriedade | (entrevista | producao)│   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
-```
-
 ## 🛠️ Tecnologias Utilizadas
 
 ### Backend
