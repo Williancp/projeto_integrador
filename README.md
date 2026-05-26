@@ -58,45 +58,6 @@ Aplicativo móvel completo para levantamento e gerenciamento de dados de proprie
 - **Docker Compose** - Orquestração de containers
 - **Git** - Controle de versão
 
-## 📦 Estrutura do Projeto
-
-```
-projeto_integrador/
-├── projeto_integrador_backend/
-│   ├── src/main/java/com/projetointegrador/
-│   │   ├── controller/          # Controladores REST
-│   │   ├── service/             # Lógica de negócio
-│   │   ├── repository/          # Acesso a dados
-│   │   ├── model/               # Entidades JPA
-│   │   ├── dto/                 # Data Transfer Objects
-│   │   ├── config/              # Configurações
-│   │   └── ProjetoIntegradorApplication.java
-│   ├── src/main/resources/
-│   │   └── application.properties
-│   ├── pom.xml
-│   ├── Dockerfile
-│   ├── init_database.sql
-│   └── README.md
-│
-├── projeto_integrador_flutter/
-│   ├── lib/
-│   │   ├── main.dart
-│   │   ├── models/              # Modelos de dados
-│   │   ├── services/            # Serviços
-│   │   ├── providers/           # Provedores de estado
-│   │   ├── screens/             # Telas
-│   │   ├── widgets/             # Widgets reutilizáveis
-│   │   └── utils/               # Utilitários
-│   ├── pubspec.yaml
-│   ├── analysis_options.yaml
-│   └── README.md
-│
-├── docker-compose.yml           # Orquestração de containers
-├── setup.sh                     # Script de setup automático
-├── GUIA_INTEGRACAO.md          # Guia completo de integração
-└── README.md                    # Este arquivo
-```
-
 ## 🚀 Quick Start
 
 ### Opção 1: Usando Docker (Recomendado)
@@ -137,14 +98,8 @@ flutter run
 
 | Tipo | Email | Senha |
 |------|-------|-------|
-| Admin | admin@example.com | admin123 |
-| Usuário | user@example.com | user123 |
-
-## 📚 Documentação Detalhada
-
-- **[GUIA_INTEGRACAO.md](./GUIA_INTEGRACAO.md)** - Guia completo de integração e setup
-- **[projeto_integrador_backend/README.md](./projeto_integrador_backend/README.md)** - Documentação do backend
-- **[projeto_integrador_flutter/README.md](./projeto_integrador_flutter/README.md)** - Documentação do frontend
+| Admin | adm@123 | adm123 |
+| Usuário | usuario@123 | usuario123 |
 
 ## 🧪 Testando o Sistema
 
@@ -173,19 +128,6 @@ curl -X GET http://localhost:8080/api/properties \
   -H "Authorization: Bearer <seu_token>"
 ```
 
-## 🎬 Vídeo de Demonstração
-
-Um vídeo de 2-5 minutos demonstrando o funcionamento completo do sistema deve ser enviado junto com a entrega. O vídeo deve incluir:
-
-1. Tela de login
-2. Autenticação bem-sucedida
-3. Visualização de propriedades
-4. Criação de nova propriedade
-5. Edição de propriedade
-6. Visualização de detalhes
-7. Exclusão de propriedade
-8. Perfil do usuário e logout
-
 ## 🔐 Segurança
 
 - ✅ Senhas criptografadas com BCrypt
@@ -194,102 +136,4 @@ Um vídeo de 2-5 minutos demonstrando o funcionamento completo do sistema deve s
 - ✅ Validação de entrada
 - ✅ Controle de acesso baseado em roles
 
-## 📊 Modelo de Dados
 
-### Tabela: usuario
-| Campo | Tipo | Restrições |
-|-------|------|-----------|
-| id_usuario | SERIAL | PRIMARY KEY |
-| nome | VARCHAR(255) | NOT NULL |
-| email | VARCHAR(255) | UNIQUE, NOT NULL |
-| senha | VARCHAR(255) | NOT NULL |
-| telefone | VARCHAR(20) | |
-| tipo_usuario | VARCHAR(50) | NOT NULL, CHECK |
-
-### Tabela: propriedade
-| Campo | Tipo | Restrições |
-|-------|------|-----------|
-| id_propriedade | SERIAL | PRIMARY KEY |
-| nome | VARCHAR(255) | NOT NULL |
-| localidade | VARCHAR(255) | |
-| cidade | VARCHAR(255) | |
-| telefone | VARCHAR(20) | |
-| area_total | DECIMAL(10,2) | |
-| latitude | DECIMAL(10,7) | |
-| longitude | DECIMAL(10,7) | |
-| id_usuario | INTEGER | NOT NULL, FK |
-| data_criacao | TIMESTAMP | NOT NULL |
-| data_atualizacao | TIMESTAMP | NOT NULL |
-
-## 🐛 Troubleshooting
-
-### Erro: "Connection refused"
-```bash
-# Verificar se PostgreSQL está rodando
-sudo systemctl status postgresql
-
-# Ou usando Docker
-docker-compose ps
-```
-
-### Erro: "Porta 8080 já em uso"
-```bash
-# Mudar porta em application.properties
-server.port=8081
-```
-
-### Erro: "Token inválido"
-```bash
-# Fazer login novamente
-# O token JWT tem validade de 24 horas por padrão
-```
-
-## 📈 Próximas Fases (Futuro)
-
-- [ ] Implementar CRUD de Entrevistas
-- [ ] Implementar CRUD de Produção
-- [ ] Integração com mapa (Google Maps)
-- [ ] Câmera para capturar fotos
-- [ ] Gráficos de produção
-- [ ] Relatórios em PDF
-- [ ] Notificações push
-- [ ] Sincronização offline
-- [ ] Testes automatizados
-- [ ] CI/CD pipeline
-
-## 📝 Licença
-
-Este projeto é desenvolvido como trabalho acadêmico para a disciplina de Sistemas para Internet.
-
-## 👥 Equipe
-
-- **Desenvolvedor:** [Seu Nome]
-- **Instituição:** Universidade Federal de Santa Maria (UFSM)
-- **Curso:** Sistemas para Internet
-- **Disciplina:** Projeto Integrador
-
-## 📞 Suporte
-
-Para dúvidas ou sugestões:
-1. Consulte a [GUIA_INTEGRACAO.md](./GUIA_INTEGRACAO.md)
-2. Verifique os READMEs específicos de cada projeto
-3. Consulte a documentação oficial do Flutter e Spring Boot
-
-## ✅ Checklist de Entrega
-
-- [x] Backend implementado em Java Spring Boot
-- [x] Frontend implementado em Flutter
-- [x] Banco de dados PostgreSQL configurado
-- [x] Autenticação com JWT funcionando
-- [x] CRUD completo de propriedades
-- [x] Interface móvel responsiva
-- [x] Documentação completa
-- [x] Script de setup automático
-- [x] Docker Compose para fácil deployment
-- [x] Pronto para apresentação
-
----
-
-**Última atualização:** 26/05/2026  
-**Versão:** 1.0.0  
-**Status:** ✅ Pronto para Entrega 3
