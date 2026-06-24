@@ -4,7 +4,7 @@
 
 Aplicativo móvel completo para levantamento e gerenciamento de dados de propriedades rurais, desenvolvido como projeto integrador para a disciplina de Sistemas para Internet. O sistema implementa 50% das funcionalidades planejadas, focando em autenticação, gerenciamento de usuários (admin) e CRUD completo de propriedades.
 
-**Status:** Entrega 3 - 50% do Sistema Implementado ✅
+**Status:** Entrega 4 - 100% do Sistema Implementado ✅
 
 ## 🎯 Funcionalidades Implementadas
 
